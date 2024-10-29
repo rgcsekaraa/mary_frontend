@@ -15,6 +15,7 @@
     "@types/three": "0.152.1",
     "@vitejs/plugin-react": "^3.1.0",
     "axios": "^1.7.7",
+    "dotenv": "^16.4.5",
     "leva": "^0.9.35",
     "lucide-react": "^0.453.0",
     "react": "^18.2.0",

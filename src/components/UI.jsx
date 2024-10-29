@@ -3,6 +3,8 @@ import { useChat } from '../hooks/useChat';
 import axios from 'axios';
 import { Mic, MicOff, RefreshCw, Send } from 'lucide-react';
 
+const backendUrl = import.meta.env.VITE_BACKEND_URL;
+
 export const UI = ({ hidden, ...props }) => {
   const input = useRef();
   const { chat, loading, cameraZoomed, setCameraZoomed, message } = useChat();
@@ -14,7 +16,6 @@ export const UI = ({ hidden, ...props }) => {
   const [ogQuestions, setOgQuestions] = useState('');
   const [ogAnswers, setOgAnswers] = useState('');
   const [finalResult, setFinalResult] = useState(null);
-  const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
   const [uploadStatus, setUploadStatus] = useState({
     assignment: false,
@@ -156,6 +157,7 @@ export const UI = ({ hidden, ...props }) => {
       <div className="fixed top-0 left-0 right-0 bottom-0 z-10 flex justify-between p-4 flex-col">
         <div className="self-start backdrop-blur-md bg-white bg-opacity-50 p-4 rounded-lg">
           <h1 className="font-semibold text-2xl">Hi ! I'm Mary 😊</h1>
+          <p>Connect EducaIT's</p>
           <p>Online Ai Skills Assessor</p>
           {aiQuestions.length === 0 && (
             <div className="mt-4 flex flex-col gap-2">
