@@ -14,6 +14,7 @@ export const UI = ({ hidden, ...props }) => {
   const [ogQuestions, setOgQuestions] = useState('');
   const [ogAnswers, setOgAnswers] = useState('');
   const [finalResult, setFinalResult] = useState(null);
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
   const [uploadStatus, setUploadStatus] = useState({
     assignment: false,
@@ -90,7 +91,7 @@ export const UI = ({ hidden, ...props }) => {
 
       setLoader(true);
       // Send JSON data to the backend
-      const response = await axios.post('http://localhost:3000/result', data, {
+      const response = await axios.post(`${backendUrl}/result`, data, {
         headers: { 'Content-Type': 'application/json' },
       });
       setLoader(false);
@@ -122,7 +123,7 @@ export const UI = ({ hidden, ...props }) => {
 
       setLoader(true);
       // Send JSON data to the backend
-      const response = await axios.post('http://localhost:3000/upload', data, {
+      const response = await axios.post(`${backendUrl}/upload`, data, {
         headers: { 'Content-Type': 'application/json' },
       });
       setLoader(false);
