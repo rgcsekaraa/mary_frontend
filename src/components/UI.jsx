@@ -156,9 +156,19 @@ export const UI = ({ hidden, ...props }) => {
     <>
       <div className="fixed top-0 left-0 right-0 bottom-0 z-10 flex justify-between p-4 flex-col">
         <div className="self-start backdrop-blur-md bg-white bg-opacity-50 p-4 rounded-lg">
-          <h1 className="font-semibold text-2xl">Hi ! I'm Mary 😊</h1>
-          <p>Connect EducaIT's</p>
-          <p>Online Ai Skills Assessor</p>
+          <div className="text-2xl font-medium text-green-700 text-center p-3">
+            <img
+              src="educatit.png"
+              alt="logo"
+              className="w-10 h-10 inline-block mr-2"
+            />
+            Connect-EducaIT
+            <p className="text-center text-black text-sm">
+              Online Ai Skills Assessor
+            </p>
+          </div>
+          <h1 className="text-2xl mt-4 font-thin">Hello ! I'm Mary 😊</h1>
+
           {aiQuestions.length === 0 && (
             <div className="mt-4 flex flex-col gap-2">
               <p className="font-light text-sm text-pink-800">
